@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+    />
+    {% comment %} <link rel="manifest" href="{% static "create-exam/manifest.json" %}" /> {% endcomment %}
+    <title>V-NER</title>
+    {% if request.user.is_authenticated %}
+      {{ csrftoken|json_script:"csrftoken" }}
+        <script defer="defer" src="{% static 'create-exam/js/main.3cc33659.js' %}"></script>
+        <link href="{% static 'create-exam/css/main.0461fc2a.css' %}" rel="stylesheet" />
+    {% endif %}
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
